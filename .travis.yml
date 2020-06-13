@@ -4,8 +4,11 @@ dist: trusty
 addons:
   sonarcloud:
     organization: "jafl-github"
+    
+    env:
+    -MAVEN_VERSION=3.3.9
 install:
--eval mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V 
+-"mvn -N io.takari:maven:wrapper -Dmaven=${MAVEN_VERSION}"
 script:
   - "mvn cobertura:cobertura"
   - sonar-scanner
