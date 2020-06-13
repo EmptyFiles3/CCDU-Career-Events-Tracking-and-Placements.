@@ -4,7 +4,8 @@ dist: trusty
 addons:
   sonarcloud:
     organization: "jafl-github"
-
+install:
+-eval mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V 
 script:
   - "mvn cobertura:cobertura"
   - sonar-scanner
