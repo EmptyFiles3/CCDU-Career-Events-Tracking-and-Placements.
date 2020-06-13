@@ -1,19 +1,13 @@
 language: java
-
-jdk:
--openjdk11
-
-move back to dist: trusty
+dist: trusty
 
 addons:
   sonarcloud:
-    organization: "Emptyiles3-github"
+    organization: "jafl-github"
 
-sudo: false # faster builds
-
-script: 
--"mvn cobertura:cobertura"
-- sonar-scanner
+script:
+  - "mvn cobertura:cobertura"
+  - sonar-scanner
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
