@@ -6,7 +6,7 @@ addons:
     organization: "jafl-github"
     
     env:
-    -MAVEN_VERSION=3.3.9
+    -MAVEN_VERSION=3.3.8
 install:
 -"mvn -N io.takari:maven:wrapper -Dmaven=${MAVEN_VERSION}"
 script:
