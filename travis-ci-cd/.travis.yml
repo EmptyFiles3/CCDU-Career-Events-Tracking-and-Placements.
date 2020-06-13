@@ -11,6 +11,9 @@ addons:
 
 sudo: false # faster builds
 
+install:
+-eval mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V 
+
 script: 
 -"mvn cobertura:cobertura"
 - sonar-scanner
